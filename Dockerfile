@@ -5,7 +5,7 @@ RUN apt-get update && \
     apt-get install -y texlive-xetex
 
 # python libraries
-RUN pip install jupyter
+RUN pip install jupyter \
                 pandas \
                 numpy \
                 scipy \
