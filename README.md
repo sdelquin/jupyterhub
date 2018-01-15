@@ -20,20 +20,34 @@ $ make build
 $ make run
 ~~~
 
-4. In case you want to backup the HOMEs, you can do:
+4. Access [http://127.0.0.1:8000](http://127.0.0.1:8000).
+
+
+## Tools
+
+In case you want to *backup the HOMEs*, you can do:
 
 ~~~console
 $ make bk
 ~~~
 
-> The container must be running
+> The backup goes to `$PWD/mnt/backup`  
+> The container must be running.
 
-5. In case you want to restore the HOMEs, you can do:
+In case you want to *restore the HOMEs*, you can do:
 
 ~~~console
 $ make restore
 ~~~
 
-> The container must be running
+> The backup is taken from `$PWD/mnt/backup`  
+> The container must be running.
 
-6. Access [http://127.0.0.1:8000](http://127.0.0.1:8000).
+In case you want to *distribute some files*, first copy the desired files to `$PWD/mnt/dist` and:
+
+~~~console
+$ make dist
+~~~
+
+> The files are copied to the HOMEs of the users.  
+> The container must be running.

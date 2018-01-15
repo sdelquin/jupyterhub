@@ -5,7 +5,7 @@ RUN apt-get update && \
     apt-get install -y texlive-xetex
 
 # python libraries
-RUN pip install jupyter \
+RUN pip install jupyter
                 pandas \
                 numpy \
                 scipy \
@@ -14,5 +14,5 @@ RUN pip install jupyter \
 
 # management of users
 COPY users.txt /root/users.txt
-COPY users.py /root/users.py
-RUN python /root/users.py
+COPY bootstrap.py /root/bootstrap.py
+RUN python /root/bootstrap.py
