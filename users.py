@@ -1,12 +1,7 @@
 from os import system
 
-USERS = (
-    "pepe",
-    "juan",
-    "maria",
-    "lucia"
-)
-
-for user in USERS:
-    system("adduser --disabled-password --gecos '' {}".format(user))
-    system("echo {0}:{0} | chpasswd".format(user))
+with open("/root/users.txt") as f:
+    for line in f:
+        username, password = line.strip().split(",")
+        system("adduser --disabled-password --gecos '' {}".format(username))
+        system("echo {}:{} | chpasswd".format(username, password))
