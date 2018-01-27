@@ -2,6 +2,8 @@ build:
 	docker build . -t jupyterhub
 run:
 	docker run --name jupyterhub -v $(shell pwd)/mnt:/mnt -p 8000:8000 jupyterhub
+rund:
+	docker run -d --name jupyterhub -v $(shell pwd)/mnt:/mnt -p 8000:8000 jupyterhub
 rm:
 	docker rm jupyterhub
 rmi:
